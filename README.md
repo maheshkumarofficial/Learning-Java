@@ -1,4 +1,4 @@
-# Learning-Java With Mahesh Kumar 
+# Learning Java With Mahesh Kumar 
 
 This repository contains a collection of Java programming code categorized by different topics of core Java, OOPs, and data structures and algorithms. The code is well-written, easy to understand, and efficient. It can be used as a reference for beginners and experienced programmers alike.
 
