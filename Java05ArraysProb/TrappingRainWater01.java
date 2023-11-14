@@ -75,3 +75,49 @@ public class TrappingRainWater01
         System.out.println("Total Water that can be trapped is:" + " " + (TrappingRainWater(barheight)));
     }
 }
+
+/*
+ *  Step 2: Calculate the maximum left boundary for each element in the input array:
+
+ *  LeftMaxBoundary[0] = barheight[0] = 4;
+    LeftMaxBoundary[1] = Math.max(LeftMaxBoundary[0], barheight[1]) = 4;
+    LeftMaxBoundary[2] = Math.max(LeftMaxBoundary[1], barheight[2]) = 4;
+    LeftMaxBoundary[3] = Math.max(LeftMaxBoundary[2], barheight[3]) = 6;
+    LeftMaxBoundary[4] = Math.max(LeftMaxBoundary[3], barheight[4]) = 6;
+    LeftMaxBoundary[5] = Math.max(LeftMaxBoundary[4], barheight[5]) = 6;
+    LeftMaxBoundary[6] = Math.max(LeftMaxBoundary[5], barheight[6]) = 6;
+ 
+
+
+    This loop iterates over the input array from left to right. 
+    At each iteration, the loop compares the current element of the input array to the left maximum boundary of the previous element. 
+    The loop then updates the left maximum boundary of the current element to the greater of the two.
+
+    Step 3: Calculate the maximum right boundary for each element in the input array:
+
+    RightMaxBoundary[n - 1] = barheight[n - 1] = 5;
+    RightMaxBoundary[n - 2] = Math.max(RightMaxBoundary[n - 1], barheight[n - 2]) = 5;
+    RightMaxBoundary[n - 3] = Math.max(RightMaxBoundary[n - 2], barheight[n - 3]) = 6;
+    RightMaxBoundary[n - 4] = Math.max(RightMaxBoundary[n - 3], barheight[n - 4]) = 6;
+    RightMaxBoundary[n - 5] = Math.max(RightMaxBoundary[n - 4], barheight[n - 5]) = 3;
+    RightMaxBoundary[n - 6] = Math.max(RightMaxBoundary[n - 5], barheight[n - 6]) = 2;
+    RightMaxBoundary[n - 7] = Math.max(RightMaxBoundary[n - 6], barheight[n - 7]) = 5;
+
+    LeftMaxBoundary = [4,4,4,6,6,6,6];
+
+    RightMaxBoundary = [6, 5, 6, 6, 3, 2, 5]
+
+    int TrappedWater = 0;
+    for (int i = 0; i < n; i++) {
+    int WaterLevel = Math.min(LeftMaxBoundary[i], RightMaxBoundary[i]);
+    TrappedWater += WaterLevel - barheight[i];
+    }
+
+    This loop iterates over the input array from right to left. 
+    At each iteration, the loop compares the current element of the input array to the right maximum boundary of the next element. 
+    The loop then updates the right maximum boundary of the current element to the greater of the two.
+
+    TrappedWater = 0 + (4 - 2) + (4 - 0) + (6 - 6) + (6 - 3) + (6 - 2) + (5 - 5) = 11
+
+    Output: Total Water that can be trapped is: 11
+ */
